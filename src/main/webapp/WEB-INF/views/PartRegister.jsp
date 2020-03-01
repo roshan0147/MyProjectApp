@@ -35,5 +35,6 @@
                   <input type="submit" value="CREATE"/>
           </pre>
    </form:form>
+   ${message}
 </body>
 </html>
