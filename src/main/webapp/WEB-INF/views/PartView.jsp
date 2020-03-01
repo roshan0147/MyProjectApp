@@ -7,6 +7,32 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<H3>WELCOME TO PART VIEW PAGE !</H3>
+<table border="1">
+    <tr>
+      <th>ID</th><td>${ob.partId}</td>
+    </tr>
+    <tr>
+      <th>CODE</th><td>${ob.partCode}</td>
+    </tr>
+    <tr>
+      <th>WIDTH</th><td>${ob.partWidth}</td>
+    </tr>
+    <tr>
+      <th>LENGHT</th><td>${ob.partLenght}</td>
+    </tr>
+    <tr>
+      <th>HEIGHT</th><td>${ob.partHeight}</td>
+    </tr>
+    <tr>
+      <th>COST</th><td>${ob.partBaseCost}</td>
+    </tr>
+    <tr>
+      <th>CURRENCY</th><td>${ob.partBaseCurrency}</td>
+    </tr>
+    <tr>
+      <th>NOTES</th><td>${ob.partDesc}</td>
+    </tr>
+</table>
 </body>
 </html>

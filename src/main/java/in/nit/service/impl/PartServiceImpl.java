@@ -23,4 +23,16 @@ public class PartServiceImpl implements IPartService {
 	public List<Part> getAllParts() {
 		return dao.getAllParts();
 	}
+	@Transactional
+	public void deletePart(Integer id) {
+		dao.deletePart(id);
+	}
+	@Transactional(readOnly = true)
+	public Part getOnePart(Integer id) {
+		return dao.getOnePart(id);
+	}
+	@Transactional
+	public void updatePart(Part p) {
+		dao.updatePart(p);
+	}
 }

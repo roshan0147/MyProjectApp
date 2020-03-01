@@ -20,4 +20,13 @@ public class PartDaoImpl implements IPartDao {
 	public List<Part> getAllParts() {
 		return ht.loadAll(Part.class);
 	}
+	public void deletePart(Integer id) {
+		ht.delete(new Part(id));
+	}
+	public Part getOnePart(Integer id) {
+		return ht.get(Part.class, id);
+	}
+	public void updatePart(Part p) {
+		ht.update(p);
+	}
 }

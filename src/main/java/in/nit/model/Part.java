@@ -33,6 +33,12 @@ public class Part {
 	public Part() {
 		super();
 	}
+
+	public Part(Integer partId) {
+		super();
+		this.partId = partId;
+	}
+
 	public Integer getPartId() {
 		return partId;
 	}
