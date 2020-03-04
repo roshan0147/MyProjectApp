@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="Menu.jsp" %>
 	<H3>WELCOME TO WHUSERTYPE DATA PAGE !!</H3>
 	<a href="excel">Excel Export</a>
 	<a href="pdf">PDF Export</a>

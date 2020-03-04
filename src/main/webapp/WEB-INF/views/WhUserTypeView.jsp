@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="Menu.jsp" %>
 <a href="excel?id=${ob.userId}">Excel Export</a>|
 <a href="pdf?id=${ob.userId}">PDF Export</a>
   <table border="1">

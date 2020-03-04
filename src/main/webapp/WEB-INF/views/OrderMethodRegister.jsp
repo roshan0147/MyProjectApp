@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="Menu.jsp" %>
 <H3>WELCOME TO ORDER METHOD PAGE !!</H3>
 <form:form action="save" method="POST" modelAttribute="orderMethod">
   <pre>

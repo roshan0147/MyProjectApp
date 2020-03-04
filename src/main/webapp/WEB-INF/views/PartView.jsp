@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="Menu.jsp" %>
 <H3>WELCOME TO PART VIEW PAGE !</H3>
 <table border="1">
     <tr>

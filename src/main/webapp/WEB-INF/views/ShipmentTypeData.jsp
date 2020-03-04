@@ -8,11 +8,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<H3>ALL SHIPMENTTYPE DATA !!</H3>
+<%@include file="Menu.jsp" %>
+    <div class="container">
+    <div class="card">
+       <div class="card-header text-center text-white bg-info">
+         <h3> ALL SHIPMENTTYPE DATA</h3>
+       </div>
+       <div class="card-body">
 	<a href="excel">Excel Export</a>|<a href="pdf">PDF Export</a>
 	<c:choose>
 		<c:when test="${!empty list }">
-			<table border="1">
+			<table class="table table-hover">
 				<tr>
 					<th>ID</th>
 					<th>MODE</th>
@@ -30,9 +36,9 @@
 						<td>${ob.enbShip}</td>
 						<td>${ob.shipGrade}</td>
 						<td>${ob.shipDesc}</td>
-						<td><a href="delete?sid=${ob.shipId}">DELETE</a></td>
-						<td><a href="edit?sid=${ob.shipId}">EDIT</a></td>
-						<td><a href="view?sid=${ob.shipId}">VIEW</a></td>
+						<td><a href="delete?sid=${ob.shipId}" class="btn btn-danger">DELETE</a></td>
+						<td><a href="edit?sid=${ob.shipId}" class="btn btn-success">EDIT</a></td>
+						<td><a href="view?sid=${ob.shipId}" class="btn btn-info">VIEW</a></td>
 					</tr>
 				</c:forEach>
 				<tr></tr>
@@ -42,5 +48,8 @@
 			<H3>DATA NOT FOUND !</H3>
 		</c:otherwise>
 	</c:choose>
+	</div>
+	</div>
+	</div>
 </body>
 </html>

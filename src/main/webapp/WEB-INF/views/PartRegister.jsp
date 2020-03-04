@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="Menu.jsp" %>
 <H3>WELCOME TO PART PAGE !!</H3>
 <form:form action="save" method="POST" modelAttribute="part">
     <pre>

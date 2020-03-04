@@ -7,10 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="Menu.jsp" %>
+<div class="container">
 <a href="excel?id=${ob.shipId}">Excel Export</a>|
 <a href="pdf?id=${ob.shipId}">PDF Export</a>
 
-	<table border="1">
+	<table class="table">
 		<tr>
 			<th>ID</th>
 			<td>${ob.shipId}</td>
@@ -36,5 +38,6 @@
 			<td>${ob.shipDesc}</td>
 		</tr>
 	</table>
+	</div>
 </body>
 </html>

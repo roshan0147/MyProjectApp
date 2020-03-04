@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="Menu.jsp" %>
 	<h3>UOM DATA PAGE !!!</h3>
 	<a href="excel">Excel Export</a>
 	<a href="pdf">PDF Export</a>

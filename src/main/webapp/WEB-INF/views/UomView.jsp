@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="Menu.jsp" %>
 <H3>WELCOME TO UOM VIEW PAGE !!</H3>
 <a href="excel?id=${ob.uomId}">Excel Export</a>|
 <a href="pdf?id=${ob.uomId}">PDF Export</a>

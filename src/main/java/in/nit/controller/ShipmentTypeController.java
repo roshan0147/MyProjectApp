@@ -39,8 +39,8 @@ public class ShipmentTypeController {
 	@RequestMapping(value="/save",method=RequestMethod.POST)
 	public String saveShipmentData(@ModelAttribute ShipmentType shipmentType,Model model)
 	{
-		Integer id=service.saveShipmentType(shipmentType);
-		String message="Shipment "+id+" Saved";
+		service.saveShipmentType(shipmentType);
+		String message="Register Successfully";
 		model.addAttribute("message",message);
 		model.addAttribute("shipmentType",new ShipmentType());
 		return "ShipmentTypeRegister";

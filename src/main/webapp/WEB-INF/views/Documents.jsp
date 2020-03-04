@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="Menu.jsp" %>
 <form action="upload" method="POST" enctype="multipart/form-data">
   <pre>
      ID:     <input type="text" name="fileId">

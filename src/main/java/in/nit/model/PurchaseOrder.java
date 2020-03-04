@@ -17,6 +17,8 @@ public class PurchaseOrder {
 	@GenericGenerator(name="poid",strategy = "increment")
 	@Column(name="poid")
 	private Integer poId;
+	@Column(name="ocode")
+	private String OrderCode;
 	@Column(name="scode")
 	private String shipmentCode;
 	@Column(name="vendor")
@@ -37,6 +39,12 @@ public class PurchaseOrder {
 	}
 	public void setPoId(Integer poId) {
 		this.poId = poId;
+	}
+	public String getOrderCode() {
+		return OrderCode;
+	}
+	public void setOrderCode(String orderCode) {
+		OrderCode = orderCode;
 	}
 	public String getShipmentCode() {
 		return shipmentCode;
@@ -76,10 +84,11 @@ public class PurchaseOrder {
 	}
 	@Override
 	public String toString() {
-		return "PurchaseOrder [poId=" + poId + ", shipmentCode=" + shipmentCode + ", vendor=" + vendor
-				+ ", referenceNumber=" + referenceNumber + ", qualityCheck=" + qualityCheck + ", defaultStatus="
-				+ defaultStatus + ", description=" + description + "]";
+		return "PurchaseOrder [poId=" + poId + ", OrderCode=" + OrderCode + ", shipmentCode=" + shipmentCode
+				+ ", vendor=" + vendor + ", referenceNumber=" + referenceNumber + ", qualityCheck=" + qualityCheck
+				+ ", defaultStatus=" + defaultStatus + ", description=" + description + "]";
 	}
+	
 	
 	
 

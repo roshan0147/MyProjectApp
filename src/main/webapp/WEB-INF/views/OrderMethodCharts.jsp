@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="Menu.jsp" %>
 <H3>WECOME TO ORDERMETHOD CHARTS</H3>
 <img src="../resources/images/orderA.jpg" />
 <img src="../resources/images/orderB.jpg" />

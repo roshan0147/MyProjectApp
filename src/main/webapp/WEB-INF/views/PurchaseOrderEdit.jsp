@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@include file="Menu.jsp" %>
-<H3>WECOME TO WHUSERTYPE CHARTS</H3>
-<img src="../resources/images/userA.jpg" />
-<img src="../resources/images/userB.jpg" />
+
 </body>
 </html>

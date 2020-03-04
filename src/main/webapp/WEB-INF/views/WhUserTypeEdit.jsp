@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="Menu.jsp" %>
 	<h3>User Type Register Page !!</h3>
 	<form:form action="update" method="POST" modelAttribute="whUserType">
 		<pre>

@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="Menu.jsp" %>
 	<h3>UOM EDIT PAGE !!</h3>
 	<form:form action="update" method="post" modelAttribute="uom">
 		<pre>

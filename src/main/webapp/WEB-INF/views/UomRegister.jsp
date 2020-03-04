@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="Menu.jsp" %>
 	<h3>UOM REGISTER PAGE !!</h3>
 	<form:form action="save" method="post" modelAttribute="uom">
 		<pre>

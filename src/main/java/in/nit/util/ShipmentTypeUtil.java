@@ -25,7 +25,7 @@ public class ShipmentTypeUtil {
 	    try {
 			ChartUtils.saveChartAsJPEG(new File(path+"/resources/images/shipmentA.jpg"), chart,400,400);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		} 
 	}

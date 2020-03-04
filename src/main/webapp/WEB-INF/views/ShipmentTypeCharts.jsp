@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="Menu.jsp" %>
 <H3>WECOME TO SHIPMENTTYPE CHARTS</H3>
 <img src="../resources/images/shipmentA.jpg" />
 <img src="../resources/images/shipmentB.jpg" />
