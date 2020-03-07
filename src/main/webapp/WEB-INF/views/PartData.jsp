@@ -9,8 +9,13 @@
 </head>
 <body>
 <%@include file="Menu.jsp" %>
-<H3>WELCOME TO PART DATA PAGE !!</H3>
-<table border="1">
+<div class="container">
+<div class="card">
+    <div class="card-header bg-info text-center">
+    <H3>WELCOME TO PART DATA PAGE !!</H3>
+    </div>
+    <div class="card-body">
+     <table class="table table-hover">
   <tr>
      <th>ID</th>
      <th>CODE</th>
@@ -19,6 +24,7 @@
      <th>HEIGHT</th>
      <th>COST</th>
      <th>CURRENCY</th>
+     <th>UOM</th>
      <th>NOTE</th>
      <th colspan="3">OPERATIONS</th>
   </tr>
@@ -29,14 +35,20 @@
            <td>${ob.partWidth}</td>
            <td>${ob.partLenght}</td>
            <td>${ob.partHeight}</td>
-           <td>${ob.partBaseCost}</td>
-           <td>${ob.partBaseCurrency}</td>
-           <td>${ob.partDesc}</td>
-           <td><a href="delete?pid=${ob.partId}">DELETE</a></td>
-		   <td><a href="edit?pid=${ob.partId}">EDIT</a></td>
-		   <td><a href="view?pid=${ob.partId}">VIEW</a></td>
+           <td>${ob.baseCost}</td>
+           <td>${ob.baseCurrency}</td>
+           <td>${ob.uomOb.uomModel}</td>
+           <td>${ob.note}</td>
+           <td><a href="delete?pid=${ob.partId}" class="btn btn-danger">DELETE</a></td>
+		   <td><a href="edit?pid=${ob.partId}" class="btn btn-success">EDIT</a></td>
+		   <td><a href="view?pid=${ob.partId}" class="btn btn-warning">VIEW</a></td>
        </tr>
     </c:forEach>
 </table>
+    
+    </div>
+</div>
+
+</div>
 </body>
 </html>

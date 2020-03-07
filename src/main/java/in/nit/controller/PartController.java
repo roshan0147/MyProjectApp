@@ -1,6 +1,7 @@
 package in.nit.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,27 +13,38 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import in.nit.model.Part;
 import in.nit.service.IPartService;
+import in.nit.service.IUomService;
+import in.nit.util.CommonUtil;
 
 @Controller
 @RequestMapping("/part")
 public class PartController {
 	@Autowired
 	private IPartService service;
-	
+	@Autowired
+	private IUomService uomService;
+	private void commonUi(Model model)
+	{
+		List<Object[]> uomList=uomService.getUomIdAndUomModel();
+		Map<Integer,String> uomMap=CommonUtil.convert(uomList);
+		model.addAttribute("uomList",uomMap);
+	}
 	@RequestMapping("/register")
 	public String partRegisterPage(Model model)
 	{
 		model.addAttribute("part",new Part());
+		commonUi(model);
 		return "PartRegister";
 	}
 	@RequestMapping(value="/save",method = RequestMethod.POST)
 	public String savePartData(@ModelAttribute Part part,Model model)
 	{
-		Integer id=service.savePart(part);
-		String message=id+" Saved";
+		service.savePart(part);
+		String message="Saved Successfully";
 		model.addAttribute("message",message);
 		model.addAttribute("part",new Part());
-	    return "PartRegister";	
+	    commonUi(model);
+		return "PartRegister";	
 	}
 	@RequestMapping("/all")
 	public String showPartData(Model model)
@@ -60,6 +72,7 @@ public class PartController {
 	{
 		Part p=service.getOnePart(pid);
 		model.addAttribute("part",p);
+		commonUi(model);
 		return "PartEdit";
 	}
 	@RequestMapping(value="/update",method = RequestMethod.POST)

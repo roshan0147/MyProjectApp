@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,26 +10,73 @@
 </head>
 <body>
 <%@include file="Menu.jsp" %>
-	<h3>UOM REGISTER PAGE !!</h3>
-	<form:form action="save" method="post" modelAttribute="uom">
-		<pre>
-UomType:
-     <form:select path="uomType">
+<div class="container">
+   <div class="card">
+       <div class="card-header bg-info text-center text-white">
+             <h3>UOM REGISTER PAGE !!</h3>
+       </div>
+       <div class="card-body">
+           <form:form action="save" method="post" modelAttribute="uom">
+         <div class="row">
+              <div class="col-4">
+                  UomType:
+              </div>
+              <div class="col-4">
+                  <form:select path="uomType" class="form-control mb-3">
         <form:option value="">---SELECT---</form:option>
         <form:option value="PACKING">PACKING</form:option>
         <form:option value="NO PACKING">NO PACKING</form:option>
         <form:option value="-NA-">-NA-</form:option>
      </form:select>
+              </div>
+              <div class="col-4">
+              
+              </div>
+         </div>
+       <div class="row">
+            <div class="col-4">
+               UomModel:
+            </div>
+            <div class="col-4">
+                <form:input path="uomModel" class="form-control mb-3"/>
+            </div>
+            <div class="col-4">
+            
+            </div>
+       </div>
      
-UomModel:
-    <form:input path="uomModel"/>
+     <div class="row">
+         <div class="col-4">
+              Description:
+         </div>
+         <div class="col-4">
+               <form:textarea path="uomDesc" class="form-control mb-3"/>
+         </div>
+         <div class="col-4">
+         
+         </div>
+     </div>
+     <div class="row">
+         <div class="col-4">
+         
+         </div>
+         <div class="col-4">
+             <input type="submit" value="CREATE UOM" class="btn btn-primary">
+         </div>
+         <div class="col-4">
+         
+         </div>
+     </div>
     
-Description:
-    <form:textarea path="uomDesc"></form:textarea>
-    
-    <input type="submit" value="CREATE UOM">
-</pre>
 	</form:form>
-	${message}
+       </div>
+       <c:if test="${!empty message }">
+           <div class="card-footer text-success">
+               ${message}
+           </div>
+       </c:if>
+   </div>
+</div>
+	
 </body>
 </html>

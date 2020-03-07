@@ -38,8 +38,8 @@ public class UomController {
 	@RequestMapping(value="/save",method=RequestMethod.POST)
 	public String saveUomData(@ModelAttribute Uom uom,Model model)
 	{
-		Integer id=service.saveUom(uom);
-		String message="Uom '"+id+"'Saved";
+		service.saveUom(uom);
+		String message="Register Successfully";
 		model.addAttribute("message",message);
 		model.addAttribute("uom",new Uom());
 		return "UomRegister";

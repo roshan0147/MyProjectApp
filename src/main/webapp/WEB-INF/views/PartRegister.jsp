@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,34 +9,95 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@include file="Menu.jsp" %>
-<H3>WELCOME TO PART PAGE !!</H3>
-<form:form action="save" method="POST" modelAttribute="part">
-    <pre>
-       CODE:
-                 <form:input path="partCode"/>
-          
-       DIMENSION:
-           WIDTH <form:input path="partWidth"/> LENGHT <form:input path="partLenght"/> HEIGHT <form:input path="partHeight"/>
-    
-       BASE COST:
-                 <form:input path="partBaseCost"/>
-              
-       BASE CURRENCY:
-                 <form:select path="partBaseCurrency">
-                  <form:option value="">--SELECT--</form:option>
-                  <form:option value="INR">INR</form:option>
-                  <form:option value="USD">USD</form:option>
-                  <form:option value="AUS">AUS</form:option>
-                  <form:option value="ERU">ERU</form:option>
-                 </form:select>
-              
-       DESCRIPTION:
-                  <form:textarea path="partDesc"/>
-             
-                  <input type="submit" value="CREATE"/>
-          </pre>
-   </form:form>
-   ${message}
+	<%@include file="Menu.jsp"%>
+
+	<div class="container">
+		<div class="card">
+			<div class="card-header bg-info text-white text-center">
+				<H3>WELCOME TO PART PAGE !!</H3>
+			</div>
+			<div class="card-body">
+				<form:form action="save" method="POST" modelAttribute="part">
+					<div class="row">
+						<div class="col-4">CODE:</div>
+						<div class="col-4">
+							<form:input path="partCode" class="form-control mb-3" />
+						</div>
+						<div class="col-4"></div>
+					</div>
+					<div class="row">
+						<div class="col-4">WIDTH</div>
+						<div class="col-4">
+							<form:input path="partWidth" class="form-control mb-3" />
+						</div>
+						<div class="col-4"></div>
+					</div>
+					<div class="row">
+						<div class="col-4">LENGHT</div>
+						<div class="col-4">
+							<form:input path="partLenght" class="form-control mb-3" />
+						</div>
+						<div class="col-4"></div>
+					</div>
+
+					<div class="row">
+						<div class="col-4">HEIGHT</div>
+						<div class="col-4">
+							<form:input path="partHeight" class="form-control mb-3" />
+						</div>
+						<div class="col-4"></div>
+					</div>
+					<div class="row">
+						<div class="col-4">BASE COST:</div>
+						<div class="col-4">
+							<form:input path="baseCost" class="form-control mb-3" />
+						</div>
+						<div class="col-4"></div>
+					</div>
+					<div class="row">
+						<div class="col-4">BASE CURRENCY:</div>
+						<div class="col-4">
+							<form:select path="baseCurrency" class="form-control mb-3">
+								<form:option value="">--SELECT--</form:option>
+								<form:option value="INR">INR</form:option>
+								<form:option value="USD">USD</form:option>
+								<form:option value="AUS">AUS</form:option>
+								<form:option value="ERU">ERU</form:option>
+							</form:select>
+						</div>
+						<div class="col-4"></div>
+					</div>
+					<div class="row">
+						<div class="col-4">UOM:</div>
+						<div class="col-4">
+							<form:select path="uomOb.uomId" class="form-control mb-3">
+								<form:option value="">--SELECT--</form:option>
+								<form:options items="${uomList}"/>
+							</form:select>
+						</div>
+						<div class="col-4"></div>
+					</div>
+					<div class="row">
+						<div class="col-4">DESCRIPTION:</div>
+						<div class="col-4">
+							<form:textarea path="note" class="form-control mb-3" />
+						</div>
+						<div class="col-4"></div>
+					</div>
+					<div class="row">
+						<div class="col-4"></div>
+						<div class="col-4">
+							<input type="submit" value="CREATE" class="btn btn-success" />
+						</div>
+						<div class="col-4"></div>
+					</div>
+
+				</form:form>
+			</div>
+			<c:if test="${!empty message }">
+				<div class="card-footer text-success">${message}</div>
+			</c:if>
+		</div>
+	</div>
 </body>
 </html>

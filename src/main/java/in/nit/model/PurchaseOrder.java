@@ -18,7 +18,7 @@ public class PurchaseOrder {
 	@Column(name="poid")
 	private Integer poId;
 	@Column(name="ocode")
-	private String OrderCode;
+	private String orderCode;
 	@Column(name="scode")
 	private String shipmentCode;
 	@Column(name="vendor")
@@ -41,10 +41,10 @@ public class PurchaseOrder {
 		this.poId = poId;
 	}
 	public String getOrderCode() {
-		return OrderCode;
+		return orderCode;
 	}
 	public void setOrderCode(String orderCode) {
-		OrderCode = orderCode;
+		this.orderCode = orderCode;
 	}
 	public String getShipmentCode() {
 		return shipmentCode;
@@ -84,7 +84,7 @@ public class PurchaseOrder {
 	}
 	@Override
 	public String toString() {
-		return "PurchaseOrder [poId=" + poId + ", OrderCode=" + OrderCode + ", shipmentCode=" + shipmentCode
+		return "PurchaseOrder [poId=" + poId + ", OrderCode=" + orderCode + ", shipmentCode=" + shipmentCode
 				+ ", vendor=" + vendor + ", referenceNumber=" + referenceNumber + ", qualityCheck=" + qualityCheck
 				+ ", defaultStatus=" + defaultStatus + ", description=" + description + "]";
 	}

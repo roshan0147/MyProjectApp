@@ -9,12 +9,17 @@
 </head>
 <body>
 <%@include file="Menu.jsp" %>
-	<H3>WELCOME TO ORDER METHOD DATA PAGE !!</H3>
-	<a href="excel">Excel Export</a>
+  <div class="container">
+       <div class="card">
+          <div class="card-header bg-info text-center text-white">
+             <H3>WELCOME TO ORDER METHOD DATA PAGE</H3>
+          </div>
+          <div class="card-body">
+               <a href="excel">Excel Export</a>
 	<a href="pdf">PDF Export</a>
 	<c:choose>
 		<c:when test="${!empty list }">
-			<table border="1">
+			<table class="table">
 				<tr>
 					<th>ID</th>
 					<th>MODE</th>
@@ -32,9 +37,9 @@
 						<td>${ob.orderType}</td>
 						<td>${ob.orderAccept}</td>
 						<td>${ob.orderDesc}</td>
-						<td><a href="delete?oid=${ob.orderId}">DELETE</a></td>
-						<td><a href="view?oid=${ob.orderId}">VIEW</a></td>
-						<td><a href="edit?oid=${ob.orderId}">EDIT</a></td>
+						<td><a href="delete?oid=${ob.orderId}" class="btn btn-danger">DELETE</a></td>
+						<td><a href="view?oid=${ob.orderId}" class="btn btn-success">VIEW</a></td>
+						<td><a href="edit?oid=${ob.orderId}" class="btn btn-primary">EDIT</a></td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -42,6 +47,9 @@
 		<c:otherwise>
 			<h3>DATA NOT FOUND !!</h3>
 		</c:otherwise>
-	</c:choose>
+	  </c:choose>
+         </div>
+       </div>
+    </div>	
 </body>
 </html>

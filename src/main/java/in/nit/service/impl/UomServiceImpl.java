@@ -41,4 +41,8 @@ public class UomServiceImpl implements IUomService {
     public List<Object[]> getUomTyoeCount() {
     	return dao.getUomTyoeCount();
     }
+    @Transactional(readOnly = true)
+    public List<Object[]> getUomIdAndUomModel() {
+    	return dao.getUomIdAndUomModel();
+    }
 }

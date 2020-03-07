@@ -4,11 +4,15 @@
 <c:set var="url"
 	value="${fn:replace(base, pageContext.request.requestURI, pageContext.request.contextPath)}" />
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
+ -->
+<link rel="stylesheet" href="../resources/bootstrap/css/bootstrap.min.css">
+<script src="../resources/bootstrap/js/jquery-3.2.1.min.js"></script>
+<script src="../resources/bootstrap/js/popper.min.js"></script>
+<script src="../resources/bootstrap/js/bootstrap.min.js"></script>
 <nav class="navbar navbar-expand-lg navbar-light bg-info">
   <a class="navbar-brand" href="#">WHAREHOUSE</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,11 +89,11 @@
           Purchase
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="${url}/purchase/all">Purchase Data</a>
+          <a class="dropdown-item" href="${url}/purchaseOrder/all">Purchase Data</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="${url}/purchase/charts">Charts</a>
+          <a class="dropdown-item" href="${url}/purchaseOrder/charts">Charts</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="${url}/purchase/register">Register</a>
+          <a class="dropdown-item" href="${url}/purchaseOrder/register">Register</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -103,6 +107,14 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="${url}/sale/register">Register</a>
         </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Document
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="${url}/document/show">Upload</a>
+          </div>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">

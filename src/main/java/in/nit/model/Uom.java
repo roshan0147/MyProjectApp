@@ -10,7 +10,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name="uomtab")
-public class Uom {
+public final class Uom {
 	@Id
 	@GeneratedValue(generator = "uomid")
 	@GenericGenerator(name = "uomid",strategy = "increment")

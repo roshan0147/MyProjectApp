@@ -9,12 +9,18 @@
 </head>
 <body>
 <%@include file="Menu.jsp" %>
-	<h3>UOM DATA PAGE !!!</h3>
+   <div class="container">
+      <div class="card">
+          <div class="card-header text-center text-white bg-info">
+                <h3>UOM DATA PAGE !!!</h3>
+          </div>
+         
+	<div class="card-body">
 	<a href="excel">Excel Export</a>
 	<a href="pdf">PDF Export</a>
 	<c:choose>
 		<c:when test="${!empty list}">
-			<table border="1">
+			<table class="table">
 				<tr>
 					<th>ID</th>
 					<th>TYPE</th>
@@ -28,9 +34,9 @@
 						<td>${ob.uomType}</td>
 						<td>${ob.uomModel}</td>
 						<td>${ob.uomDesc}</td>
-						<td><a href="delete?uid=${ob.uomId}">DELETE</a></td>
-					    <td><a href="view?uid=${ob.uomId}">VIEW</a></td>
-					    <td><a href="edit?uid=${ob.uomId}">EDIT</a></td>
+						<td><a href="delete?uid=${ob.uomId}" class="btn btn-danger">DELETE</a></td>
+					    <td><a href="view?uid=${ob.uomId}" class="btn btn-success">VIEW</a></td>
+					    <td><a href="edit?uid=${ob.uomId}" class="btn btn-primary">EDIT</a></td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -39,5 +45,8 @@
 			<h1>DATA NOT FOUND !!</h1>
 		</c:otherwise>
 	</c:choose>
+	</div>
+	</div>
+	</div>
 </body>
 </html>
