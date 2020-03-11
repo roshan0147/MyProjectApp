@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -19,10 +21,6 @@ public class PurchaseOrder {
 	private Integer poId;
 	@Column(name="ocode")
 	private String orderCode;
-	@Column(name="scode")
-	private String shipmentCode;
-	@Column(name="vendor")
-	private String vendor;
 	@Column(name="refnumber")
 	private String referenceNumber;
 	@Column(name="qcheck")
@@ -31,6 +29,15 @@ public class PurchaseOrder {
 	private String defaultStatus;
 	@Column(name="pdesc")
 	private String description;
+	
+	@ManyToOne
+	@JoinColumn(name="shipIdFK")
+	private ShipmentType shipOb;
+	
+	@ManyToOne
+	@JoinColumn(name="whIdFk")
+	private WhUserType whOb;
+	
 	public PurchaseOrder() {
 		super();
 	}
@@ -45,18 +52,6 @@ public class PurchaseOrder {
 	}
 	public void setOrderCode(String orderCode) {
 		this.orderCode = orderCode;
-	}
-	public String getShipmentCode() {
-		return shipmentCode;
-	}
-	public void setShipmentCode(String shipmentCode) {
-		this.shipmentCode = shipmentCode;
-	}
-	public String getVendor() {
-		return vendor;
-	}
-	public void setVendor(String vendor) {
-		this.vendor = vendor;
 	}
 	public String getReferenceNumber() {
 		return referenceNumber;
@@ -82,14 +77,23 @@ public class PurchaseOrder {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public ShipmentType getShipOb() {
+		return shipOb;
+	}
+	public void setShipOb(ShipmentType shipOb) {
+		this.shipOb = shipOb;
+	}
+	public WhUserType getWhOb() {
+		return whOb;
+	}
+	public void setWhOb(WhUserType whOb) {
+		this.whOb = whOb;
+	}
 	@Override
 	public String toString() {
-		return "PurchaseOrder [poId=" + poId + ", OrderCode=" + orderCode + ", shipmentCode=" + shipmentCode
-				+ ", vendor=" + vendor + ", referenceNumber=" + referenceNumber + ", qualityCheck=" + qualityCheck
-				+ ", defaultStatus=" + defaultStatus + ", description=" + description + "]";
+		return "PurchaseOrder [poId=" + poId + ", orderCode=" + orderCode + ", referenceNumber=" + referenceNumber
+				+ ", qualityCheck=" + qualityCheck + ", defaultStatus=" + defaultStatus + ", description=" + description
+				+ ", shipOb=" + shipOb + ", whOb=" + whOb + "]";
 	}
 	
-	
-	
-
 }

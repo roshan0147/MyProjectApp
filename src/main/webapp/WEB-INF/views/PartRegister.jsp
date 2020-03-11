@@ -78,6 +78,26 @@
 						<div class="col-4"></div>
 					</div>
 					<div class="row">
+						<div class="col-4"> SALE CODE:</div>
+						<div class="col-4">
+							<form:select path="omSalesOb.orderId" class="form-control mb-3">
+								<form:option value="">--SELECT--</form:option>
+								<form:options items="${omSalesMap}"/>
+							</form:select>
+						</div>
+						<div class="col-4"></div>
+					</div>
+					<div class="row">
+						<div class="col-4">PURCHASE CODE:</div>
+						<div class="col-4">
+							<form:select path="omPurchaseOb.orderId" class="form-control mb-3">
+								<form:option value="">--SELECT--</form:option>
+								<form:options items="${omPurchaseMap}"/>
+							</form:select>
+						</div>
+						<div class="col-4"></div>
+					</div>
+					<div class="row">
 						<div class="col-4">DESCRIPTION:</div>
 						<div class="col-4">
 							<form:textarea path="note" class="form-control mb-3" />

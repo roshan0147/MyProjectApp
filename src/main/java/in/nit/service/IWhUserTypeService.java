@@ -12,5 +12,5 @@ public interface IWhUserTypeService {
     public WhUserType getOneWhUserType(Integer id);
     public void updateWhUserType(WhUserType ob);
     public List<Object[]> getWhUserTypeIdTypeCount();
-
+    public List<Object[]> getWhUserTypeIdAndUserCode(String userType);
 }

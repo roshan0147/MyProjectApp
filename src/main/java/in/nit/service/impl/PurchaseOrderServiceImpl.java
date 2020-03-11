@@ -23,4 +23,8 @@ public class PurchaseOrderServiceImpl implements IPurchaseOrderService {
 	public List<PurchaseOrder> getAllPurchaseOrders() {
 		return dao.getAllPurchaseOrders();
 	}
+	@Transactional(readOnly = true)
+	public PurchaseOrder getOnePurchaseOrder(Integer id) {
+		return dao.getOnePurchaseOrder(id);
+	}
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import in.nit.model.Part;
+import in.nit.service.IOrderMethodService;
 import in.nit.service.IPartService;
 import in.nit.service.IUomService;
 import in.nit.util.CommonUtil;
@@ -23,11 +24,21 @@ public class PartController {
 	private IPartService service;
 	@Autowired
 	private IUomService uomService;
+	@Autowired
+	private IOrderMethodService orderService;
 	private void commonUi(Model model)
 	{
 		List<Object[]> uomList=uomService.getUomIdAndUomModel();
 		Map<Integer,String> uomMap=CommonUtil.convert(uomList);
 		model.addAttribute("uomList",uomMap);
+		
+		List<Object[]> omSalesList=orderService.getOrderMethodIdAndMode("Sale");
+		Map<Integer,String> omSalesMap=CommonUtil.convert(omSalesList);
+		model.addAttribute("omSalesMap",omSalesMap);
+		
+		List<Object[]> omPurchaseList=orderService.getOrderMethodIdAndMode("Purchase");
+		Map<Integer,String> omPurchaseMap=CommonUtil.convert(omPurchaseList);
+		model.addAttribute("omPurchaseMap",omPurchaseMap);
 	}
 	@RequestMapping("/register")
 	public String partRegisterPage(Model model)

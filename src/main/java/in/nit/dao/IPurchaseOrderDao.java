@@ -8,4 +8,5 @@ public interface IPurchaseOrderDao {
 	
 	public Integer savePurchaseOrder(PurchaseOrder po);
     public List<PurchaseOrder> getAllPurchaseOrders(); 
+    public PurchaseOrder getOnePurchaseOrder(Integer id);
 }

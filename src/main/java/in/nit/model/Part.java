@@ -30,95 +30,144 @@ public final class Part {
 	@ManyToOne
 	@JoinColumn(name="uomIdFK")
 	private Uom uomOb;
-
+    
+	@ManyToOne
+	@JoinColumn(name="omSalesIdFk")
+	private OrderMethod omSalesOb;
+	
+	@ManyToOne
+	@JoinColumn(name="omPurchaseIdPk")
+	private OrderMethod omPurchaseOb;
+	
+	
 	public Part() {
 		super();
 	}
-     
+    
+
 	public Part(Integer partId) {
 		super();
 		this.partId = partId;
 	}
 
+
 	public Integer getPartId() {
 		return partId;
 	}
+
 
 	public void setPartId(Integer partId) {
 		this.partId = partId;
 	}
 
+
 	public String getPartCode() {
 		return partCode;
 	}
+
 
 	public void setPartCode(String partCode) {
 		this.partCode = partCode;
 	}
 
+
 	public Double getPartLenght() {
 		return partLenght;
 	}
+
 
 	public void setPartLenght(Double partLenght) {
 		this.partLenght = partLenght;
 	}
 
+
 	public Double getPartWidth() {
 		return partWidth;
 	}
+
 
 	public void setPartWidth(Double partWidth) {
 		this.partWidth = partWidth;
 	}
 
+
 	public Double getPartHeight() {
 		return partHeight;
 	}
+
 
 	public void setPartHeight(Double partHeight) {
 		this.partHeight = partHeight;
 	}
 
+
 	public Double getBaseCost() {
 		return baseCost;
 	}
+
 
 	public void setBaseCost(Double baseCost) {
 		this.baseCost = baseCost;
 	}
 
+
 	public String getBaseCurrency() {
 		return baseCurrency;
 	}
+
 
 	public void setBaseCurrency(String baseCurrency) {
 		this.baseCurrency = baseCurrency;
 	}
 
+
 	public String getNote() {
 		return note;
 	}
+
 
 	public void setNote(String note) {
 		this.note = note;
 	}
 
+
 	public Uom getUomOb() {
 		return uomOb;
 	}
+
 
 	public void setUomOb(Uom uomOb) {
 		this.uomOb = uomOb;
 	}
 
+
+	public OrderMethod getOmSalesOb() {
+		return omSalesOb;
+	}
+
+
+	public void setOmSalesOb(OrderMethod omSalesOb) {
+		this.omSalesOb = omSalesOb;
+	}
+
+
+	public OrderMethod getOmPurchaseOb() {
+		return omPurchaseOb;
+	}
+
+
+	public void setOmPurchaseOb(OrderMethod omPurchaseOb) {
+		this.omPurchaseOb = omPurchaseOb;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Part [partId=" + partId + ", partCode=" + partCode + ", partLenght=" + partLenght + ", partWidth="
 				+ partWidth + ", partHeight=" + partHeight + ", baseCost=" + baseCost + ", baseCurrency=" + baseCurrency
-				+ ", note=" + note + ", uomOb=" + uomOb + "]";
+				+ ", note=" + note + ", uomOb=" + uomOb + ", omSalesOb=" + omSalesOb + ", omPurchaseOb=" + omPurchaseOb
+				+ "]";
 	}
-    
-	
+     
 	
 }

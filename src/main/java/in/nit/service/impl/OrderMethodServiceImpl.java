@@ -39,4 +39,8 @@ public class OrderMethodServiceImpl implements IOrderMethodService {
     public List<Object[]> getOrderMethodTypeCount() {
     	return dao.getOrderMethodTypeCount();
     }
+    @Transactional(readOnly = true)
+    public List<Object[]> getOrderMethodIdAndMode(String mode) {
+    	return dao.getOrderMethodIdAndMode(mode);
+    }
 }

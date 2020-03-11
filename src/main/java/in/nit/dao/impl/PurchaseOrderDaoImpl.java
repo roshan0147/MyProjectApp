@@ -20,4 +20,8 @@ public class PurchaseOrderDaoImpl implements IPurchaseOrderDao {
 	public List<PurchaseOrder> getAllPurchaseOrders() {
 		return ht.loadAll(PurchaseOrder.class);
 	}
+	
+	public PurchaseOrder getOnePurchaseOrder(Integer id) {
+		return ht.get(PurchaseOrder.class,id);
+	}
 }

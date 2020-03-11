@@ -19,7 +19,7 @@
             <tr>
                <th>ID</th>
                <th>ORDER CODE</th>
-               <th>SCODE</th>
+               <th>SHIPMENT CODE</th>
                <th>VENDOR</th>
                <th>REFNUMBER</th>
                <th>QCHECK</th>
@@ -31,8 +31,8 @@
               <tr>
                  <td>${ob.poId}</td>
                  <td>${ob.orderCode}</td>
-                 <td>${ob.shipmentCode}</td>
-                 <td>${ob.vendor}</td>
+                 <td>${ob.shipOb.shipCode}</td>
+                 <td>${ob.whOb.userCode}</td>
                  <td>${ob.referenceNumber}</td>
                  <td>${ob.qualityCheck}</td>
                  <td>${ob.defaultStatus}</td>

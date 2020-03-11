@@ -21,7 +21,7 @@
 					<div class="row">
 						<div class="col-4">ID:</div>
 						<div class="col-4">
-							<form:input path="partId" class="form-control mb-3" readonly="true"/>
+							<form:input path="partId" class="form-control mb-3" />
 						</div>
 						<div class="col-4"></div>
 					</div>
@@ -79,8 +79,27 @@
 						<div class="col-4">
 							<form:select path="uomOb.uomId" class="form-control mb-3">
 								<form:option value="">--SELECT--</form:option>
-								<form:options items="${uomList}" itemValue="uomId"
-									itemLabel="uomModel" />
+								<form:options items="${uomList}"/>
+							</form:select>
+						</div>
+						<div class="col-4"></div>
+					</div>
+					<div class="row">
+						<div class="col-4"> SALE CODE:</div>
+						<div class="col-4">
+							<form:select path="omSalesOb.orderId" class="form-control mb-3">
+								<form:option value="">--SELECT--</form:option>
+								<form:options items="${omSalesMap}"/>
+							</form:select>
+						</div>
+						<div class="col-4"></div>
+					</div>
+					<div class="row">
+						<div class="col-4">PURCHASE CODE:</div>
+						<div class="col-4">
+							<form:select path="omPurchaseOb.orderId" class="form-control mb-3">
+								<form:option value="">--SELECT--</form:option>
+								<form:options items="${omPurchaseMap}"/>
 							</form:select>
 						</div>
 						<div class="col-4"></div>

@@ -25,6 +25,8 @@
      <th>COST</th>
      <th>CURRENCY</th>
      <th>UOM</th>
+     <th>SALE CODE</th>
+     <th>PURCHASE CODE</th>
      <th>NOTE</th>
      <th colspan="3">OPERATIONS</th>
   </tr>
@@ -38,6 +40,8 @@
            <td>${ob.baseCost}</td>
            <td>${ob.baseCurrency}</td>
            <td>${ob.uomOb.uomModel}</td>
+           <td>${ob.omSalesOb.orderCode}</td>
+           <td>${ob.omPurchaseOb.orderCode}</td>
            <td>${ob.note}</td>
            <td><a href="delete?pid=${ob.partId}" class="btn btn-danger">DELETE</a></td>
 		   <td><a href="edit?pid=${ob.partId}" class="btn btn-success">EDIT</a></td>
