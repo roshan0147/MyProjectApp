@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,7 +68,7 @@
 					<div class="row mb-3">
 						<div class="col-4">Default Status:</div>
 						<div class="col-4">
-							<form:input path="defaultStatus" class="form-control" />
+							<form:input path="defaultStatus" class="form-control" readonly="true"/>
 						</div>
 						<div class="col-4"></div>
 					</div>
@@ -91,7 +92,9 @@
 
 				</form:form>
 			</div>
-			<div class="card-footer">${message}</div>
+			<c:if test="">
+			<div class="card-footer text-primary">${message}</div>
+			</c:if>
 		</div>
 	</div>
 </body>

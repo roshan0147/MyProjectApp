@@ -80,7 +80,7 @@
 				</form:form>
 			</div>
 			<c:if test="${!empty message }">
-				<div class="card-footer">${message}</div>
+				<div class="card-footer text-success">${message}</div>
 			</c:if>
 		</div>
 	</div>

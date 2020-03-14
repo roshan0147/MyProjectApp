@@ -71,7 +71,7 @@
 	</form:form>
        </div>
        <c:if test="${!empty message }">
-           <div class="card-footer text-success">
+           <div class="card-footer text-primary">
                ${message}
            </div>
        </c:if>

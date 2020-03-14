@@ -49,8 +49,8 @@ public class PurchaseOrderController {
 	@RequestMapping(value="/save",method = RequestMethod.POST)
 	public String savePurchaseOrder(@ModelAttribute PurchaseOrder purchaseOrder,Model model)
 	{
-		Integer id=service.savePurchaseOrder(purchaseOrder);
-		String message=id+" Saved";
+		service.savePurchaseOrder(purchaseOrder);
+		String message="Saved Successfully";
 		model.addAttribute("message",message);
 		PurchaseOrder po=new PurchaseOrder();
 		po.setDefaultStatus("OPEN");
@@ -71,6 +71,18 @@ public class PurchaseOrderController {
 		model.addAttribute("purchaseOrder",po);
 		commonUi(model);
 		return "PurchaseOrderEdit";
+	}
+	@RequestMapping(value="/update",method = RequestMethod.POST)
+	public String updatePurchaseOrder(@ModelAttribute PurchaseOrder purchaseOrder,Model model)
+	{
+		service.updatePurchaseOrder(purchaseOrder);
+		return "redirect:all";
+	}
+	@RequestMapping("/delete")
+	public String deletePurchaseOrder(@RequestParam Integer poid)
+	{
+		service.deletePurchaseOrder(poid);
+		return "redirect:all";
 	}
 
 }

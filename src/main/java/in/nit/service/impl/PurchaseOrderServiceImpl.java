@@ -27,4 +27,13 @@ public class PurchaseOrderServiceImpl implements IPurchaseOrderService {
 	public PurchaseOrder getOnePurchaseOrder(Integer id) {
 		return dao.getOnePurchaseOrder(id);
 	}
+	@Transactional
+	public void updatePurchaseOrder(PurchaseOrder po) {
+		dao.updatePurchaseOrder(po);
+	}
+	@Transactional
+	public void deletePurchaseOrder(Integer id) {
+		dao.deletePurchaseOrder(id);
+		
+	}
 }

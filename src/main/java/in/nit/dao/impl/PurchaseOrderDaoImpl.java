@@ -24,4 +24,13 @@ public class PurchaseOrderDaoImpl implements IPurchaseOrderDao {
 	public PurchaseOrder getOnePurchaseOrder(Integer id) {
 		return ht.get(PurchaseOrder.class,id);
 	}
+	@Override
+	public void updatePurchaseOrder(PurchaseOrder po) {
+		ht.update(po);
+	}
+	@Override
+	public void deletePurchaseOrder(Integer id) {
+		ht.delete(new PurchaseOrder(id));
+		
+	}
 }

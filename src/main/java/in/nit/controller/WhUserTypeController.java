@@ -39,8 +39,8 @@ public class WhUserTypeController {
 	@RequestMapping(value="/save",method = RequestMethod.POST)
 	public String saveWhUserType(@ModelAttribute WhUserType whUserType,Model model)
 	{
-		Integer id=service.saveWhUserType(whUserType);
-		String message="WhUserType "+id+"Saved";
+		service.saveWhUserType(whUserType);
+		String message="Saved Successfully";
 		model.addAttribute("message",message);
 		model.addAttribute("whUserType",new WhUserType());
 		return "WhUserTypeRegister";

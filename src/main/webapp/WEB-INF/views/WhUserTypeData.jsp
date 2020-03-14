@@ -9,12 +9,17 @@
 </head>
 <body>
 <%@include file="Menu.jsp" %>
-	<H3>WELCOME TO WHUSERTYPE DATA PAGE !!</H3>
-	<a href="excel">Excel Export</a>
+     <div class="container">
+     <div class="card">
+        <div class="card-header bg-info text-white text-center">
+             <H3>WELCOME TO WHUSERTYPE DATA PAGE !!</H3>
+        </div>
+        <div class="card-body">
+             <a href="excel">Excel Export</a>
 	<a href="pdf">PDF Export</a>
 	<c:choose>
 		<c:when test="${!empty list }">
-			<table border="1">
+			<table class="table">
 				<tr>
 					<th>ID</th>
 					<th>TYPE</th>
@@ -36,9 +41,9 @@
 						<td>${ob.userContact}</td>
 						<td>${ob.userIdType}</td>
 						<td>${ob.userIdNumber}</td>
-						<td><a href="delete?wid=${ob.userId}">DELETE</a></td>
-						<td><a href="view?wid=${ob.userId}">VIEW</a></td>
-						<td><a href="edit?wid=${ob.userId}">EDIT</a></td>
+						<td><a href="delete?wid=${ob.userId}" class="btn btn-danger">DELETE</a></td>
+						<td><a href="view?wid=${ob.userId}" class="btn btn-primary">VIEW</a></td>
+						<td><a href="edit?wid=${ob.userId}" class="btn btn-success">EDIT</a></td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -47,5 +52,10 @@
 			<h3>DATA NOT FOUND !!</h3>
 		</c:otherwise>
 	</c:choose>
+        </div>
+     </div>
+	
+	
+	</div>
 </body>
 </html>

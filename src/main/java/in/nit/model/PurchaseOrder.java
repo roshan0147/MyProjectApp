@@ -41,6 +41,12 @@ public class PurchaseOrder {
 	public PurchaseOrder() {
 		super();
 	}
+	
+	public PurchaseOrder(Integer poId) {
+		super();
+		this.poId = poId;
+	}
+
 	public Integer getPoId() {
 		return poId;
 	}

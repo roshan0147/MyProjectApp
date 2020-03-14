@@ -101,11 +101,11 @@
           Sale
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="${url}/sale/all">Sale Data</a>
+          <a class="dropdown-item" href="${url}/saleOrder/all">Sale Data</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="${url}/sale/charts">Charts</a>
+          <a class="dropdown-item" href="${url}/saleOrder/charts">Charts</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="${url}/sale/register">Register</a>
+          <a class="dropdown-item" href="${url}/saleOrder/register">Register</a>
         </div>
       </li>
       <li class="nav-item dropdown">

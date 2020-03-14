@@ -39,8 +39,8 @@ public class OrderMethodController {
 	@RequestMapping(value="/save",method = RequestMethod.POST)
 	public String saveOrderMethodData(@ModelAttribute OrderMethod orderMethod,Model model)
 	{
-		Integer id=service.saveOrderMethod(orderMethod);
-		String message="OrderMethod "+id+" Saved";
+		service.saveOrderMethod(orderMethod);
+		String message=" Saved Successfully";
 		model.addAttribute("message",message);
 		model.addAttribute("orderMethod",new OrderMethod());
 		return "OrderMethodRegister";
