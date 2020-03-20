@@ -110,6 +110,18 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Grn
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="${url}/grn/all">Sale Data</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="${url}/grn/charts">Charts</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="${url}/grn/register">Register</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Document
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -117,9 +129,9 @@
           </div>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="text-white btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <form class="form-inline" action="/action_page.php">
+    <input class="form-control" type="text" placeholder="Search">
+    <button class="btn btn-success" type="submit">Search</button>
+  </form>
   </div>
 </nav>
