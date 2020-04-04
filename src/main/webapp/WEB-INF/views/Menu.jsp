@@ -131,7 +131,7 @@
     </ul>
     <form class="form-inline" action="/action_page.php">
     <input class="form-control" type="text" placeholder="Search">
-    <button class="btn btn-success" type="submit">Search</button>
+    <button class="btn btn-success" type="submit">Find</button>
   </form>
   </div>
 </nav>

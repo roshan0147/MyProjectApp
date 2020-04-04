@@ -25,20 +25,20 @@
 							<form:radiobutton path="userType" value="Customer" />
 							Customer
 						</div>
-						<div class="col-4"></div>
+						<div class="col-4" id="userTypeError"></div>
 					</div>
 					<div class="row mb-3">
 						<div class="col-4">UserCode:</div>
 						<div class="col-4">
 							<form:input path="userCode" class="form-control"/>
 						</div>
-						<div class="col-4"></div>
+						<div class="col-4" id="userCodeError"></div>
 					</div>
 
 					<div class="row mb-3">
 						<div class="col-4">UserFor:</div>
 						<div class="col-4">
-							<form:input path="userFor" class="form-control"/>
+							<form:input path="userFor" class="form-control" readonly="true"/>
 						</div>
 						<div class="col-4"></div>
 					</div>
@@ -48,7 +48,7 @@
 						<div class="col-4">
 							<form:input path="userMail" class="form-control"/>
 						</div>
-						<div class="col-4"></div>
+						<div class="col-4" id="userMailError"></div>
 					</div>
 
 					<div class="row mb-3">
@@ -56,7 +56,7 @@
 						<div class="col-4">
 							<form:input path="userContact" class="form-control"/>
 						</div>
-						<div class="col-4"></div>
+						<div class="col-4" id="userContactError"></div>
 					</div>
 
 					<div class="row mb-3">
@@ -70,7 +70,7 @@
 								<form:option value="OTHER">OTHER</form:option>
 							</form:select>
 						</div>
-						<div class="col-4"></div>
+						<div class="col-4" id="idTypeError"></div>
 					</div>
 
 
@@ -79,7 +79,7 @@
 						<div class="col-4">
 							<form:input path="userIdNumber" class="form-control"/>
 						</div>
-						<div class="col-4"></div>
+						<div class="col-4" id="idNumberError"></div>
 					</div>
 
 					<div class="row mb-3">
@@ -87,7 +87,7 @@
 						<div class="col-4">
 							<input type="submit" value="CREATE USER" class="btn btn-success">
 						</div>
-						<div class="col-4"></div>
+						<div class="col-4" id="register"></div>
 					</div>
 
 				</form:form>
@@ -97,5 +97,15 @@
 			</c:if>
 		</div>
 	</div>
+	
+	<script type="text/javascript">
+        $(document).ready(function(){
+               
+            
+            })
+
+
+
+	</script>
 </body>
 </html>

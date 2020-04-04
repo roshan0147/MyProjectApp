@@ -96,12 +96,19 @@
 			}
 			function validate_uomModel() {
 				var val = $('#uomModel').val();
+				var exp=/^[A-Z]{2,5}$/;
 				if (val == '') {
 					$('#uomModelError').show();
 					$('#uomModelError').html("Enter <b>UOM MODEL</b>");
 					$('#uomModelError').css("color", "red");
 					uomModelError = false;
-				} else {
+				}else if(!exp.test(val)){
+					$('#uomModelError').show();
+					$('#uomModelError').html("Only 2 to 5 Uppercase Letters");
+					$('#uomModelError').css("color", "red");
+					uomModelError = false;
+					}
+				 else {
 					$('#uomModelError').hide();
 					uomModelError = true;
 				}
@@ -109,12 +116,19 @@
 			}
 			function validate_uomDesc() {
 				var val = $('#uomDesc').val();
+				var exp=/^[a-zA-Z0-9-_.]{2,150}$/;
 				if (val == '') {
 					$('#uomDescError').show();
 					$('#uomDescError').html("Enter <b>UOM DESCRIPTION</b>");
 					$('#uomDescError').css("color", "red");
 					uomDescError = false;
-				} else {
+				}else if(!exp.test(val)){
+					$('#uomDescError').show();
+					$('#uomDescError').html("Only Takes(2 to 150) Alphabates,Digits and . _ - <b>FOR DESCRIPTION</b>");
+					$('#uomDescError').css("color", "red");
+					uomDescError = false;
+					}
+				 else {
 					$('#uomDescError').hide();
 					uomDescError = true;
 				}
