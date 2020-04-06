@@ -18,7 +18,7 @@
 			<div class="card-body">
 				<form:form action="save" method="post" modelAttribute="uom">
 					<div class="row">
-						<div class="col-4">UomType:</div>
+						<div class="col-4">UomType<span class="text-danger">*</span></div>
 						<div class="col-4">
 							<form:select path="uomType" class="form-control mb-3">
 								<form:option value="">---SELECT---</form:option>
@@ -30,7 +30,7 @@
 						<div class="col-4" id="uomTypeError"></div>
 					</div>
 					<div class="row">
-						<div class="col-4">UomModel:</div>
+						<div class="col-4">UomModel<span class="text-danger">*</span></div>
 						<div class="col-4">
 							<form:input path="uomModel" class="form-control mb-3" />
 						</div>
@@ -38,7 +38,7 @@
 					</div>
 
 					<div class="row">
-						<div class="col-4">Description:</div>
+						<div class="col-4">Description<span class="text-danger">*</span></div>
 						<div class="col-4">
 							<form:textarea path="uomDesc" class="form-control mb-3" />
 						</div>
