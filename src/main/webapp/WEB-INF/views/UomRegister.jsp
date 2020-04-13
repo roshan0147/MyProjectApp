@@ -32,9 +32,12 @@
 					<div class="row">
 						<div class="col-4">UomModel<span class="text-danger">*</span></div>
 						<div class="col-4">
-							<form:input path="uomModel" class="form-control mb-3" />
+							<form:input path="uomModel" class="form-control mb-3"/>
 						</div>
-						<div class="col-4" id="uomModelError"></div>
+						<div class="col-2" id="uomModelError"></div>
+						<div class="col-2" id="serverError">
+						   <form:errors path="uomModel" class="text-danger"/>
+						</div>
 					</div>
 
 					<div class="row">
@@ -98,11 +101,13 @@
 				var val = $('#uomModel').val();
 				var exp=/^[A-Z]{2,5}$/;
 				if (val == '') {
+					$('#serverError').hide();
 					$('#uomModelError').show();
 					$('#uomModelError').html("Enter <b>UOM MODEL</b>");
 					$('#uomModelError').css("color", "red");
 					uomModelError = false;
 				}else if(!exp.test(val)){
+					$('#serverError').hide();
 					$('#uomModelError').show();
 					$('#uomModelError').html("Only 2 to 5 Uppercase Letters");
 					$('#uomModelError').css("color", "red");

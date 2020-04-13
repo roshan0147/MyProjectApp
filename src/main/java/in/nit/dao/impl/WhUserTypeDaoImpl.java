@@ -40,4 +40,19 @@ public class WhUserTypeDaoImpl implements IWhUserTypeDao {
 		String hql=" select userId,userCode from "+WhUserType.class.getName()+" where userType=?0";
 		return (List<Object[]>) ht.find(hql, userType);
 	}
+	@Override
+	public boolean isUserCodeExist(String userCode) {
+		boolean flag=false;
+		String sql="SELECT COUNT(userCode) FROM in.nit.model.WhUserType WHERE userCode=?0";
+		@SuppressWarnings({ "unchecked", "deprecation" })
+		List<Long> list=(List<Long>) ht.find(sql, userCode);
+		if(list!=null && !list.isEmpty()) {
+			long count=list.get(0);
+			if(count==0)
+				flag=false;
+			else
+				flag=true;
+		}
+		return flag;
+	}
 }

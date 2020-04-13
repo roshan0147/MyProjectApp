@@ -42,4 +42,19 @@ public class UomDaoImpl implements IUomDao {
 		List<Object[]> list=(List<Object[]>) ht.find(sql);
 		return list;
 	}
+	@Override
+	public boolean isUomModelExist(String uomModel) {
+		boolean flag=false;
+		String sql="SELECT COUNT(uomModel) FROM in.nit.model.Uom WHERE uomModel=?0";
+		@SuppressWarnings({ "unchecked", "deprecation" })
+		List<Long> list=(List<Long>) ht.find(sql, uomModel);
+		if(list!=null && !list.isEmpty()) {
+			long count=list.get(0);
+			if(count==0)
+				    flag=false;
+				else
+					flag=true;
+		}
+		return flag;
+	}
 }

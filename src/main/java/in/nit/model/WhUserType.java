@@ -27,6 +27,8 @@ public class WhUserType {
 	private String userContact;
 	@Column(name="whidtype",length = 15)
 	private String userIdType;
+	@Column(name="whotherid",length = 15)
+	private String ifOther;
 	@Column(name="whidnum",length = 15)
 	private String userIdNumber;
 	public WhUserType() {
@@ -78,6 +80,12 @@ public class WhUserType {
 	public void setUserIdType(String userIdType) {
 		this.userIdType = userIdType;
 	}
+	public String getIfOther() {
+		return ifOther;
+	}
+	public void setIfOther(String ifOther) {
+		this.ifOther = ifOther;
+	}
 	public String getUserIdNumber() {
 		return userIdNumber;
 	}
@@ -88,8 +96,9 @@ public class WhUserType {
 	public String toString() {
 		return "WhUserType [userId=" + userId + ", userType=" + userType + ", userCode=" + userCode + ", userFor="
 				+ userFor + ", userMail=" + userMail + ", userContact=" + userContact + ", userIdType=" + userIdType
-				+ ", userIdNumber=" + userIdNumber + "]";
+				+ ", ifOther=" + ifOther + ", userIdNumber=" + userIdNumber + "]";
 	}
+	
 	
 	
 

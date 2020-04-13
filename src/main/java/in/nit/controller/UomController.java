@@ -8,6 +8,7 @@ import javax.servlet.ServletContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import in.nit.model.Uom;
 import in.nit.service.IUomService;
 import in.nit.util.UomUtil;
+import in.nit.validator.UomValidator;
 import in.nit.view.UomExcelView;
 import in.nit.view.UomPdfView;
 
@@ -29,6 +31,8 @@ public class UomController {
 	private ServletContext context;
 	@Autowired
 	private UomUtil util;
+	@Autowired
+	private UomValidator validator;
 	@RequestMapping("/register")
 	public String showUomPage(Model model)
 	{
@@ -36,12 +40,18 @@ public class UomController {
 		return "UomRegister";
 	}
 	@RequestMapping(value="/save",method=RequestMethod.POST)
-	public String saveUomData(@ModelAttribute Uom uom,Model model)
+	public String saveUomData(@ModelAttribute Uom uom,Errors errors,Model model)
 	{
-		service.saveUom(uom);
-		String message="Register Successfully";
-		model.addAttribute("message",message);
-		model.addAttribute("uom",new Uom());
+		validator.validate(uom, errors);
+		if(!errors.hasErrors()) {
+			service.saveUom(uom);
+			String message="Register Successfully";
+			model.addAttribute("message",message);
+			model.addAttribute("uom",new Uom());
+		}else {
+			model.addAttribute("message","Check all errors");
+		}
+		
 		return "UomRegister";
 	}
 	@RequestMapping("/all")

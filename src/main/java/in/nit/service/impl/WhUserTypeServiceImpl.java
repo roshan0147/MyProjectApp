@@ -43,4 +43,8 @@ public class WhUserTypeServiceImpl implements IWhUserTypeService {
 	public List<Object[]> getWhUserTypeIdAndUserCode(String userType) {
 		return dao.getWhUserTypeIdAndUserCode(userType);
 	}
+	@Transactional(readOnly = true)
+	public boolean isUserCodeExist(String userCode) {
+		return dao.isUserCodeExist(userCode);
+	}
 }

@@ -13,4 +13,5 @@ public interface IWhUserTypeDao {
     public void updateWhUserType(WhUserType ob);
     public List<Object[]> getWhUserTypeIdTypeCount();
     public List<Object[]> getWhUserTypeIdAndUserCode(String userType);
+    public boolean isUserCodeExist(String userCode);
 }
