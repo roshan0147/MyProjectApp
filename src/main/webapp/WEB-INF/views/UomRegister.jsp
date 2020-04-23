@@ -83,6 +83,9 @@
 			$('#uomDesc').keyup(function() {
 				validate_uomDesc();
 			})
+			$('#uomModel').blur(function() {
+				validate_uomModel_ajax();
+			})
 
 			function validate_uomType() {
 				var val = $('#uomType').val();
@@ -139,6 +142,25 @@
 				}
 				return uomDescError;
 			}
+			function validate_uomModel_ajax(){
+
+				$.ajax({
+			     	url : 'modelExist',
+			     	data: { "model": $("#uomModel").val()},
+			     	success:function(resTxt){
+			          if(resTxt!=''){
+			          	 $("#uomModelError").show();
+			     	         $("#uomModelError").html(resTxt);
+			     	         $("#uomModelError").css("color","red");
+			     	        // $("#uomModel").val("");
+			     	        $("#uomModel").focus();//place cursor back
+			          }else{
+			          	$("#uomModelError").hide();
+			          	$("#uomModelError").html("");
+			          }
+			     	}	
+			     });
+				}
 			$('#register').click(function() {
 
 				uomTypeError = false;

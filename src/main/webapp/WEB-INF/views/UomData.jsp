@@ -22,7 +22,7 @@
 		<c:when test="${!empty list}">
 			<table class="table">
 				<tr>
-					<th>ID</th>
+					
 					<th>TYPE</th>
 					<th>MODEL</th>
 					<th>DESC</th>
@@ -30,7 +30,7 @@
 				</tr>
 				<c:forEach items="${list}" var="ob">
 					<tr>
-						<td>${ob.uomId}</td>
+						
 						<td>${ob.uomType}</td>
 						<td>${ob.uomModel}</td>
 						<td>${ob.uomDesc}</td>
