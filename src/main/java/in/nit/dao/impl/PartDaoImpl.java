@@ -29,4 +29,10 @@ public class PartDaoImpl implements IPartDao {
 	public void updatePart(Part p) {
 		ht.update(p);
 	}
+	public List<Object[]> getPartIdAndCodes() {
+		String sql="select partId,partCode from in.nit.model.Part";
+		@SuppressWarnings({ "unchecked", "deprecation" })
+		List<Object[]> list=(List<Object[]>) ht.find(sql);
+		return list;
+	}
 }

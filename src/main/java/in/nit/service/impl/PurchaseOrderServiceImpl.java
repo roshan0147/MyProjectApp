@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import in.nit.dao.IPurchaseOrderDao;
+import in.nit.model.PurchaseDtl;
 import in.nit.model.PurchaseOrder;
 import in.nit.service.IPurchaseOrderService;
 @Service
@@ -35,5 +36,21 @@ public class PurchaseOrderServiceImpl implements IPurchaseOrderService {
 	public void deletePurchaseOrder(Integer id) {
 		dao.deletePurchaseOrder(id);
 		
+	}
+	@Transactional
+	public Integer savePurchaseDtl(PurchaseDtl dtl) {
+		return dao.savePurchaseDtl(dtl);
+	}
+	@Transactional
+	public void deletePurchaseDtl(Integer id) {
+		dao.deletePurchaseDtl(id);
+	}
+	@Transactional
+	public void updatePoStatus(Integer poId, String status) {
+		dao.updatePoStatus(poId, status);
+	}
+	@Transactional(readOnly = true)
+	public List<Object[]> getPurchaseOrderIdAndCode() {
+		return dao.getPurchaseOrderIdAndCode();
 	}
 }

@@ -37,9 +37,24 @@
                  <td>${ob.qualityCheck}</td>
                  <td>${ob.defaultStatus}</td>
                  <td>${ob.description}</td>
-                 <td><a href="delete?poid=${ob.poId}" class="btn btn-danger">DELETE</a></td>
-						<td><a href="edit?poid=${ob.poId}" class="btn btn-success">EDIT</a></td>
-						<td><a href="view?poid=${ob.poId}" class="btn btn-info">VIEW</a></td>
+              	 <td><a href="parts?poid=${ob.poId}" class="btn btn-info">Add Parts</a></td>
+              	 <td>
+			   <c:choose>
+				<c:when test="${'ORDERED' eq ob.defaultStatus}">
+					<a href="invoceOrder?poId=${ob.poId}" class="btn btn-success">GENERATE INVOICE</a>
+				</c:when>
+				<c:when test="${'INVOICED' eq ob.defaultStatus}">
+					<a href="downloadInvoce?poId=${ob.poId}" class="btn btn-info">DOWNLOAD INVOICE</a>
+				</c:when>
+				<c:when test="${'RECEVIED' eq ob.defaultStatus}">
+					<b class="text-success">ORDER IS USED IN GRN</b>
+				</c:when>
+				<c:otherwise>
+					ORDER MUST BE PLACED
+				</c:otherwise>
+			</c:choose>
+			</td>
+              
               </tr>
             </c:forEach>
             </table>

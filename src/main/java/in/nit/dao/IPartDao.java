@@ -11,4 +11,7 @@ public interface IPartDao {
     public void deletePart(Integer id);
     public Part getOnePart(Integer id);
     public void updatePart(Part p);
+    
+    
+    public List<Object[]> getPartIdAndCodes();
 }
