@@ -4,11 +4,11 @@
 <c:set var="url"
 	value="${fn:replace(base, pageContext.request.requestURI, pageContext.request.contextPath)}" />
 
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+ <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
- -->
+  -->
 <link rel="stylesheet" href="../resources/bootstrap/css/bootstrap.min.css">
 <script src="../resources/bootstrap/js/jquery-3.2.1.min.js"></script>
 <script src="../resources/bootstrap/js/popper.min.js"></script>
@@ -65,11 +65,11 @@
           WhUserType
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="${url}/user/all">WhUserType Data</a>
+          <a class="dropdown-item" href="${url}/whusertype/all">WhUserType Data</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="${url}/user/charts">Charts</a>
+          <a class="dropdown-item" href="${url}/whusertype/charts">Charts</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="${url}/user/register">Register</a>
+          <a class="dropdown-item" href="${url}/whusertype/register">Register</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -128,10 +128,10 @@
           <a class="dropdown-item" href="${url}/document/show">Upload</a>
           </div>
       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="../logout">Logout</a>
+      </li>
     </ul>
-    <form class="form-inline" action="/action_page.php">
-    <input class="form-control" type="text" placeholder="Search">
-    <button class="btn btn-success" type="submit">Find</button>
-  </form>
+    
   </div>
 </nav>

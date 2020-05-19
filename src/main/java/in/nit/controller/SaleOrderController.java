@@ -18,7 +18,7 @@ import in.nit.service.IWhUserTypeService;
 import in.nit.util.CommonUtil;
 
 @Controller
-@RequestMapping("saleOrder")
+@RequestMapping("/saleOrder")
 public class SaleOrderController {
 	
 	@Autowired

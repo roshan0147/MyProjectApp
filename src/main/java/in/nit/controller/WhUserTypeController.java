@@ -23,7 +23,7 @@ import in.nit.view.WhUserTypeExcelView;
 import in.nit.view.WhUserTypePdfView;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/whusertype")
 public class WhUserTypeController {
 	
 	@Autowired

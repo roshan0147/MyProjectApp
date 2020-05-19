@@ -11,9 +11,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -80,6 +83,32 @@ public class AppConfig implements WebMvcConfigurer{
 	{
 		return new CommonsMultipartResolver();
 	}
+	//7. Mail Config Bean
+		@Bean
+		public JavaMailSender mailSender() {
+			JavaMailSenderImpl jms=new JavaMailSenderImpl();
+			jms.setHost(env.getProperty("mail.host"));
+			jms.setPort(env.getProperty("mail.port",Integer.class));
+			jms.setUsername(env.getProperty("mail.user"));
+			jms.setPassword(env.getProperty("mail.pwd"));
+			jms.setJavaMailProperties(mailProps());
+			return jms;
+		}
+		
+		
+		@Bean
+		public Properties mailProps() {
+			Properties p=new Properties();
+			p.put("mail.smtp.starttls.enable", env.getProperty("mail.secure.enable")); //HTTPS
+			p.put("mail.smtp.auth", env.getProperty("mail.auth.enable")); //HTTPS
+			return p;
+		}
+		
+		@Bean
+		public BCryptPasswordEncoder pwdEncoder() {
+			return new BCryptPasswordEncoder();
+		}
+		
 	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
