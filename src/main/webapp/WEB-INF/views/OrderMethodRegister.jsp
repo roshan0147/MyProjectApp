@@ -18,7 +18,7 @@
 			<div class="card-body">
 				<form:form action="save" method="POST" modelAttribute="orderMethod">
 					<div class="row mb-3">
-						<div class="col-4">Order Mode:</div>
+						<div class="col-4">Order Mode<span class="text-danger">*</span></div>
 						<div class="col-4">
 						    <label class="radio-inline">
 							<form:radiobutton path="orderMode" value="Sale" />
@@ -30,7 +30,7 @@
 						<div class="col-4"></div>
 					</div>
 					<div class="row mb-3">
-						<div class="col-4">Order Code:</div>
+						<div class="col-4">Order Code<span class="text-danger">*</span></div>
 						<div class="col-4">
 							<form:input path="orderCode" class="form-control"/>
 						</div>
@@ -38,7 +38,7 @@
 					</div>
 
 					<div class="row mb-3">
-						<div class="col-4">Order Type:</div>
+						<div class="col-4">Order Type<span class="text-danger">*</span></div>
 						<div class="col-4">
 							<form:select path="orderType" class="form-control">
 								<form:option value="">--SELECT--</form:option>
@@ -52,7 +52,7 @@
 					</div>
 
 					<div class="row mb-3">
-						<div class="col-4">Order Accept:</div>
+						<div class="col-4">Order Accept<span class="text-danger">*</span></div>
 						<div class="col-4">
 							<form:checkbox path="orderAccept" value="Multi Model"/>
 							Multi Model
@@ -63,7 +63,7 @@
 					</div>
 
 					<div class="row mb-3">
-						<div class="col-4">Description:</div>
+						<div class="col-4">Description<span class="text-danger">*</span></div>
 						<div class="col-4">
 							<form:textarea path="orderDesc" class="form-control"/>
 						</div>

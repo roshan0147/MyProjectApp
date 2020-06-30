@@ -19,7 +19,7 @@
             <form:form action="save" method="POST" modelAttribute="saleOrder">
                 <div class="row mb-3">
                     <div class="col-4">
-                        Order Code
+                        Order Code<span class="text-danger">*</span>
                     </div>
                     <div class="col-4">
                          <form:input path="orderCode" class="form-control"/>
@@ -30,7 +30,7 @@
                 </div>
                <div class="row mb-3">
                     <div class="col-4">
-                        Shipment Code
+                        Shipment Code<span class="text-danger">*</span>
                     </div>
                     <div class="col-4">
                          <form:select path="shipmentOb.shipId" class="form-control">
@@ -44,7 +44,7 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col-4">
-                        Customer
+                        Customer<span class="text-danger">*</span>
                     </div>
                     <div class="col-4">
                          <form:select path="whUserOb.userId" class="form-control">
@@ -58,7 +58,7 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col-4">
-                        Reference Number
+                        Reference Number<span class="text-danger">*</span>
                     </div>
                     <div class="col-4">
                         <form:input path="refNumber" class="form-control"/>
@@ -69,7 +69,7 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col-4">
-                        Stock Mode
+                        Stock Mode<span class="text-danger">*</span>
                     </div>
                     <div class="col-4">
                         <form:radiobutton path="stockMode" value="GRADE"/>GRADE
@@ -81,7 +81,7 @@
                 </div>
                 <div class="row mb-3">
                     <div class="col-4">
-                        Stock Source
+                        Stock Source<span class="text-danger">*</span>
                     </div>
                     <div class="col-4">
                          <form:select path="stockSource" class="form-control">
@@ -97,7 +97,7 @@
                 </div>
                  <div class="row mb-3">
                       <div class="col-4">
-                          Status
+                          Status<span class="text-danger">*</span>
                       </div>
                       <div class="col-4">
                          <form:input path="defaultStatus" readonly="true" class="form-control"/>
@@ -108,7 +108,7 @@
                  </div>
                   <div class="row mb-3">
                       <div class="col-4">
-                          Description
+                          Description<span class="text-danger">*</span>
                       </div>
                       <div class="col-4">
                          <form:textarea path="description" class="form-control"/>

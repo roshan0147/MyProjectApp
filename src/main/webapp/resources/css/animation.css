@@ -1,0 +1,28 @@
+.news{
+            background-color: orange;
+            color:blue;
+            font-size: 20px;
+            font-weight: bolder;
+            padding: 5px;
+            animation: news 2s infinite linear;
+            overflow: hidden;
+        }
+        .news p{
+            margin: 0;
+            animation: message 10s infinite linear;
+        }
+        @keyframes news {
+            0%,50%,100%{
+                background-color: pink;
+            }
+
+        }
+         @keyframes message {
+            0%{
+                transform: translateX(100%);
+            }
+            100%{
+                transform: translateX(-100%);
+            }
+
+        }

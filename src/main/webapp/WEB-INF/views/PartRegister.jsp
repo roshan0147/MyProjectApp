@@ -19,21 +19,21 @@
 			<div class="card-body">
 				<form:form action="save" method="POST" modelAttribute="part">
 					<div class="row">
-						<div class="col-4">CODE:</div>
+						<div class="col-4">CODE<span class="text-danger">*</span></div>
 						<div class="col-4">
 							<form:input path="partCode" class="form-control mb-3" />
 						</div>
 						<div class="col-4"></div>
 					</div>
 					<div class="row">
-						<div class="col-4">WIDTH</div>
+						<div class="col-4">WIDTH<span class="text-danger">*</span></div>
 						<div class="col-4">
 							<form:input path="partWidth" class="form-control mb-3" />
 						</div>
 						<div class="col-4"></div>
 					</div>
 					<div class="row">
-						<div class="col-4">LENGHT</div>
+						<div class="col-4">LENGHT<span class="text-danger">*</span></div>
 						<div class="col-4">
 							<form:input path="partLenght" class="form-control mb-3" />
 						</div>
@@ -41,21 +41,21 @@
 					</div>
 
 					<div class="row">
-						<div class="col-4">HEIGHT</div>
+						<div class="col-4">HEIGHT<span class="text-danger">*</span></div>
 						<div class="col-4">
 							<form:input path="partHeight" class="form-control mb-3" />
 						</div>
 						<div class="col-4"></div>
 					</div>
 					<div class="row">
-						<div class="col-4">BASE COST:</div>
+						<div class="col-4">BASE COST<span class="text-danger">*</span></div>
 						<div class="col-4">
 							<form:input path="baseCost" class="form-control mb-3" />
 						</div>
 						<div class="col-4"></div>
 					</div>
 					<div class="row">
-						<div class="col-4">BASE CURRENCY:</div>
+						<div class="col-4">BASE CURRENCY<span class="text-danger">*</span></div>
 						<div class="col-4">
 							<form:select path="baseCurrency" class="form-control mb-3">
 								<form:option value="">--SELECT--</form:option>
@@ -68,7 +68,7 @@
 						<div class="col-4"></div>
 					</div>
 					<div class="row">
-						<div class="col-4">UOM:</div>
+						<div class="col-4">UOM<span class="text-danger">*</span></div>
 						<div class="col-4">
 							<form:select path="uomOb.uomId" class="form-control mb-3">
 								<form:option value="">--SELECT--</form:option>
@@ -78,7 +78,7 @@
 						<div class="col-4"></div>
 					</div>
 					<div class="row">
-						<div class="col-4"> SALE CODE:</div>
+						<div class="col-4"> SALE CODE<span class="text-danger">*</span></div>
 						<div class="col-4">
 							<form:select path="omSalesOb.orderId" class="form-control mb-3">
 								<form:option value="">--SELECT--</form:option>
@@ -88,7 +88,7 @@
 						<div class="col-4"></div>
 					</div>
 					<div class="row">
-						<div class="col-4">PURCHASE CODE:</div>
+						<div class="col-4">PURCHASE CODE<span class="text-danger">*</span></div>
 						<div class="col-4">
 							<form:select path="omPurchaseOb.orderId" class="form-control mb-3">
 								<form:option value="">--SELECT--</form:option>
@@ -98,7 +98,7 @@
 						<div class="col-4"></div>
 					</div>
 					<div class="row">
-						<div class="col-4">DESCRIPTION:</div>
+						<div class="col-4">DESCRIPTION<span class="text-danger">*</span></div>
 						<div class="col-4">
 							<form:textarea path="note" class="form-control mb-3" />
 						</div>

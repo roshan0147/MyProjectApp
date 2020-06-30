@@ -1,10 +1,13 @@
 package in.nit.controller;
 
+import java.security.Principal;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletContext;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import in.nit.model.Uom;
@@ -25,7 +29,10 @@ import in.nit.view.UomPdfView;
 
 @Controller
 @RequestMapping("/uom")
+@SessionAttributes({"datenow","useremail"})
 public class UomController {
+	
+	private static Logger log=Logger.getLogger(UomController.class);
 	@Autowired
 	private IUomService service;
 	@Autowired
@@ -35,8 +42,10 @@ public class UomController {
 	@Autowired
 	private UomValidator validator;
 	@RequestMapping("/register")
-	public String showUomPage(Model model)
+	public String showUomPage(Model model,Principal p)
 	{
+		model.addAttribute("datenow",new Date());
+		model.addAttribute("useremail",p.getName());
 		model.addAttribute("uom",new Uom());
 		return "UomRegister";
 	}
@@ -45,6 +54,7 @@ public class UomController {
 	{
 		validator.validate(uom, errors);
 		if(!errors.hasErrors()) {
+			log.info("Enter Into method");
 			service.saveUom(uom);
 			String message="Register Successfully";
 			model.addAttribute("message",message);

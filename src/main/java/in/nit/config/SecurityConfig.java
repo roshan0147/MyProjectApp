@@ -43,10 +43,10 @@ extends WebSecurityConfigurerAdapter
 		.permitAll()
 
 		.antMatchers("/uom/**","/whusertype/**",
-				"/part/**","/ordermethod/**","/shipment/**")
+				"/part/**","/ordermethod/**","/shipment/**","/purchaseOrder/**","/grn/**","/saleOrder/**")
 		.hasAuthority("EMPLOYEE")
 
-		.antMatchers("/purchaseOrder/**","/grn/**","/saleOrder/**","/shipping/**")
+		.antMatchers("/shipping/**")
 		.hasAuthority("ADMIN")
 
 		//remaining URLS can be accessed by

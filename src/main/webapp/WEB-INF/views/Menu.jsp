@@ -13,7 +13,8 @@
 <script src="../resources/bootstrap/js/jquery-3.2.1.min.js"></script>
 <script src="../resources/bootstrap/js/popper.min.js"></script>
 <script src="../resources/bootstrap/js/bootstrap.min.js"></script>
-<nav class="navbar navbar-expand-lg navbar-light bg-info">
+<link rel="stylesheet" href="../resources/css/animation.css">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">WAREHOUSE</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -25,7 +26,7 @@
         <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           ShipmentType
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -37,7 +38,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Uom
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -49,7 +50,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           OrderMethod
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -61,7 +62,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           WhUserType
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -73,7 +74,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Part
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -85,7 +86,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Purchase
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -97,7 +98,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Sale
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -109,7 +110,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Grn
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -121,7 +122,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Document
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -129,9 +130,16 @@
           </div>
       </li>
        <li class="nav-item">
-        <a class="nav-link" href="../logout">Logout</a>
+        <a class="nav-link text-white" href="../logout">Logout</a>
       </li>
     </ul>
     
   </div>
 </nav>
+<div class="news">
+        <p>${datenow}|${useremail}</p>
+</div>
+
+
+
+

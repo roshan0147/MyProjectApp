@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import in.nit.model.User;
 import in.nit.service.IUserService;
-import in.nit.util.EmailUtil;
+//import in.nit.util.EmailUtil;
 
 @Controller
 @RequestMapping("/user")
@@ -17,7 +17,7 @@ public class UserController {
 	@Autowired
 	private IUserService service;
 	@Autowired
-	private EmailUtil emailUtil;
+	//private EmailUtil emailUtil;
 	
 	//1. Show User Reg page
 	@RequestMapping("/register")
@@ -31,17 +31,17 @@ public class UserController {
 			Model model
 			) 
 	{
-		String pwd=user.getUserPwd();
+		//String pwd=user.getUserPwd();
 
-		Integer id=service.saveUser(user);
-		if(id!=null) {
-			model.addAttribute("message", "User '"+user.getUserName()+"' Registered!");
-			String text="<h3>Welcome to: "+user.getUserName()
-				+"</h3>,<b> Your Login Details are:"+user.getUserEmail()+"/"+pwd
-				+"</b>, Your Roles are: "+user.getRoles()
-				+"  <i>All the best!!</i>";
-			emailUtil.sendEmail(user.getUserEmail(), "Welcome to User!", text);
-		}
+	      service.saveUser(user);
+//		if(id!=null) {
+//			model.addAttribute("message", "User '"+user.getUserName()+"' Registered!");
+//			String text="<h3>Welcome to: "+user.getUserName()
+//				+"</h3>,<b> Your Login Details are:"+user.getUserEmail()+"/"+pwd
+//				+"</b>, Your Roles are: "+user.getRoles()
+//				+"  <i>All the best!!</i>";
+//			emailUtil.sendEmail(user.getUserEmail(), "Welcome to User!", text);
+//		}
 		
 		return "UserRegister";
 	}
